@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B356383F2B4690F100CCC639 /* AnimeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356383E2B4690F100CCC639 /* AnimeItemView.swift */; };
 		B35638412B46989A00CCC639 /* DateFormatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35638402B46989A00CCC639 /* DateFormatExtension.swift */; };
+		B3633DFB2B4994EC00960DAE /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3633DFA2B4994EC00960DAE /* RankView.swift */; };
+		B3633DFD2B499AD800960DAE /* RankBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3633DFC2B499AD800960DAE /* RankBackgroundViewModel.swift */; };
 		B3706C912B4648510057F6BB /* JikanAPIViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706C902B4648510057F6BB /* JikanAPIViewerApp.swift */; };
 		B3706C932B4648510057F6BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706C922B4648510057F6BB /* ContentView.swift */; };
 		B3706C952B4648530057F6BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3706C942B4648530057F6BB /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		B356383E2B4690F100CCC639 /* AnimeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimeItemView.swift; path = "Preview Content/AnimeItemView.swift"; sourceTree = "<group>"; };
 		B35638402B46989A00CCC639 /* DateFormatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatExtension.swift; sourceTree = "<group>"; };
+		B3633DFA2B4994EC00960DAE /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
+		B3633DFC2B499AD800960DAE /* RankBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankBackgroundViewModel.swift; sourceTree = "<group>"; };
 		B3706C8D2B4648510057F6BB /* JikanAPIViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JikanAPIViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3706C902B4648510057F6BB /* JikanAPIViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikanAPIViewerApp.swift; sourceTree = "<group>"; };
 		B3706C922B4648510057F6BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				B356383E2B4690F100CCC639 /* AnimeItemView.swift */,
 				B380670D2B4841870088B662 /* AnimeDetailsView.swift */,
 				B35638402B46989A00CCC639 /* DateFormatExtension.swift */,
+				B3633DFA2B4994EC00960DAE /* RankView.swift */,
+				B3633DFC2B499AD800960DAE /* RankBackgroundViewModel.swift */,
 				B3706C942B4648530057F6BB /* Assets.xcassets */,
 				B3706C962B4648530057F6BB /* Preview Content */,
 			);
@@ -204,12 +210,14 @@
 				B3706CA92B465C0A0057F6BB /* WebView.swift in Sources */,
 				B356383F2B4690F100CCC639 /* AnimeItemView.swift in Sources */,
 				B3706CAB2B465C0A0057F6BB /* Anime.swift in Sources */,
+				B3633DFB2B4994EC00960DAE /* RankView.swift in Sources */,
 				B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */,
 				B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */,
 				FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */,
 				B35638412B46989A00CCC639 /* DateFormatExtension.swift in Sources */,
 				B3706C9F2B464DC80057F6BB /* TopAnimeView.swift in Sources */,
 				B3706C932B4648510057F6BB /* ContentView.swift in Sources */,
+				B3633DFD2B499AD800960DAE /* RankBackgroundViewModel.swift in Sources */,
 				B3706C912B4648510057F6BB /* JikanAPIViewerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
