@@ -13,7 +13,7 @@ struct AnimeItemView: View{
     var showRank = true
     var body: some View{
         HStack{
-            Text("\(Int(item.rank ?? 0))")
+            rankView(rank: Int(item.rank ?? 0))
                 .font(.title)
                 .opacity(showRank ? 1.0 : 0.0)
             let url = URL(string: item.images?["jpg"]?.imageURL ?? "")!
@@ -32,6 +32,18 @@ struct AnimeItemView: View{
                     .font(.system(size: 14))
             }
         }
+    }
+}
+struct rankView: View {
+    var rank: Int
+    var body: some View{
+        Text("\(rank)")
+            .fontWeight(rank <= 3 ? .bold : nil)
+            .frame(width: 40, height: 20)
+            .padding()
+            .foregroundColor(rank < 2 ? Color("Gold") : .white).background{
+                RoundedRectangle(cornerRadius: 20).foregroundColor(.black)
+            }
     }
 }
 struct AnimeItemView_Previews: PreviewProvider {
