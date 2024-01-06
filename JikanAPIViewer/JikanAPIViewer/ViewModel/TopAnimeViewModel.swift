@@ -42,8 +42,7 @@ class TopAnimeViewModel: ObservableObject{
                             }
                         }
                         existingList.append(contentsOf: newList)
-                        self.topAnimeList = existingList//.sorted(by: { $0.rank! < $1.rank! })
-                        //self.topAnimeList = self.topAnimeList.sorted(by: { $0.rank! < $1.rank! })
+                        self.topAnimeList = existingList.sorted(by: { $0.rank ?? 0.0 < $1.rank ?? 0.0 })
                     }
                 }
             case .failure(_):
