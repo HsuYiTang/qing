@@ -14,8 +14,6 @@ struct AnimeDetailsView: View {
     var body: some View{
         let url = URL(string: item.images?["jpg"]?.largeImageURL ?? "")!
         GeometryReader{ geometry in
-            let width = geometry.size.width
-            let height = geometry.size.height
             ScrollView{
                 VStack{
                     ScrollView([.vertical, .horizontal]){
