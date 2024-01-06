@@ -19,11 +19,9 @@ struct ContentView: View {
                 } label: {
                     Text("GO")
                         .font(.title)
-                }.frame(minWidth: 0, maxWidth: 100)
+                }.controlSize(.large)
                     .padding()
-                    .foregroundColor(.white)
-                    .background(.red)
-                    .cornerRadius(20)
+                    .buttonStyle(ButtonView())
             }
         }
     }

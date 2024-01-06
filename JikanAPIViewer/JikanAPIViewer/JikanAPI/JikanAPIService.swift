@@ -42,6 +42,7 @@ struct JikanAPIService: JikanAPIServiceProtocol {
      }
     
     private func makeURL(endpoint: String, param: String) -> URL? {
+        print("\(param)")
         return URL(string: baseURL + "\(endpoint)?\(param)")
     }
     

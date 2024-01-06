@@ -20,6 +20,7 @@
 		B3706CAB2B465C0A0057F6BB /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706CA62B465C0A0057F6BB /* Anime.swift */; };
 		B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706CAE2B4660E00057F6BB /* TopAnimeViewModel.swift */; };
 		B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380670D2B4841870088B662 /* AnimeDetailsView.swift */; };
+		FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB1592B498150007472C6 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		B3706CA62B465C0A0057F6BB /* Anime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
 		B3706CAE2B4660E00057F6BB /* TopAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAnimeViewModel.swift; sourceTree = "<group>"; };
 		B380670D2B4841870088B662 /* AnimeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsView.swift; sourceTree = "<group>"; };
+		FCCCB1592B498150007472C6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				B3706CA32B465C0A0057F6BB /* Preview Content */,
 				B3706C902B4648510057F6BB /* JikanAPIViewerApp.swift */,
 				B3706C922B4648510057F6BB /* ContentView.swift */,
+				FCCCB1592B498150007472C6 /* ButtonView.swift */,
 				B3706C9E2B464DC80057F6BB /* TopAnimeView.swift */,
 				B3706CA22B465C090057F6BB /* WebView.swift */,
 				B356383E2B4690F100CCC639 /* AnimeItemView.swift */,
@@ -203,6 +206,7 @@
 				B3706CAB2B465C0A0057F6BB /* Anime.swift in Sources */,
 				B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */,
 				B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */,
+				FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */,
 				B35638412B46989A00CCC639 /* DateFormatExtension.swift in Sources */,
 				B3706C9F2B464DC80057F6BB /* TopAnimeView.swift in Sources */,
 				B3706C932B4648510057F6BB /* ContentView.swift in Sources */,
@@ -337,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JikanAPIViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = 6KA93FQUQH;
+				DEVELOPMENT_TEAM = HY8925K37K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -350,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tw.edu.nkust.c110110122.JikanAPIViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = C110110101;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -366,7 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JikanAPIViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = 6KA93FQUQH;
+				DEVELOPMENT_TEAM = HY8925K37K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -379,7 +383,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tw.edu.nkust.c110110122.JikanAPIViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = C110110101;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
