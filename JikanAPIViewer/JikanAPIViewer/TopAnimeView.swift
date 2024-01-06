@@ -32,6 +32,10 @@ struct TopAnimeView: View{
                     }
                 } label: {
                     AnimeItemView(item: item)
+                }.onAppear() {
+                    if (viewModel.topAnimeList.last == item) {
+                        viewModel.fetchNextAnimePage()
+                    }
                 }
             }
         }
