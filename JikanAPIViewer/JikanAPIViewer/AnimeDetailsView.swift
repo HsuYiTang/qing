@@ -23,22 +23,22 @@ struct AnimeDetailsView: View {
                     },placeholder: {
                         ProgressView()
                     })
-                HStack{
-                    VStack(alignment: .leading){
-                        Text("\(item.titleJapanese ?? "")")
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Text("\(item.titleEnglish ?? "")")
-                        HStack{
-                            Text("Streaming platform:")
-                            Text("\(item.type ?? "")")
-                        }.aspectRatio(contentMode: .fit)
-                        Text("\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
-                            .font(.system(size: 14))
-                        HStack(alignment: .bottom){
-                            Text("score: ")
-                            Text("\((item.score ?? 5.0),specifier: "%.2f")")
-                                .foregroundColor( .red)
+                    HStack{
+                        VStack(alignment: .leading){
+                            Text("\(item.titleJapanese ?? "")")
+                                .font(.title)
+                                .fontWeight(.bold)
+                            Text("\(item.titleEnglish ?? "")")
+                            HStack{
+                                Text("Streaming platform:")
+                                Text("\(item.type ?? "")")
+                            }.aspectRatio(contentMode: .fit)
+                            Text("\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
+                                .font(.system(size: 14))
+                            HStack(alignment: .bottom){
+                                Text("score: ")
+                                Text("\((item.score ?? 5.0),specifier: "%.2f")")
+                                    .foregroundColor( .red)
                             }
                         }
                     }.frame(maxWidth: .infinity)
@@ -46,21 +46,24 @@ struct AnimeDetailsView: View {
                         Text("Source: ")
                         Text("\(item.source ?? "")")
                     }
-//                    Button {
-//                        showWebView.toggle()
-//                    } label: {
-//                        <#code#>
-//                    }.sheet(isPresented: $showWebView) {
-//                        SafariView(url: URL(string: "https://api.jikan.moe/v4/top/manga?1")!)
-
                     Text("\(item.background ?? "")").padding()
+                    Button {
+                        showWebView.toggle()
+                    } label: {
+                        Text("View on Web")
+                    }
+                    .buttonStyle(ButtonView()).sheet(isPresented: $showWebView) {
+                        if let urlString = item.url, let url = URL(string: urlString) {
+                            SafariView(url: url)
+                        }
+                    }
                 }
             }
         }
-    }
-}
-struct AnimeDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimeDetailsView(item: Anime(id: 123, url: "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood", images: ["jpg": CoverImage(imageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", smallImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", largeImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg")], trailer: nil, title: "test", titleEnglish: "test", titleJapanese: "測試", titleSynonyms: nil, type: nil, source: nil, episodes: nil, status: nil, airing: nil, aired: nil, duration: nil, rating: nil, score: 5.0, scoredBy: nil, rank: 1.0, popularity: nil, members: nil, favorites: nil, synopsis: nil, background: nil, season: nil, year: nil, broadcast: nil, producers: nil, licensors: nil, studios: nil, genres: nil, explicitGenres: nil, themes: nil, demographics: nil))
+//        struct AnimeDetailsView_Previews: PreviewProvider {
+//            static var previews: some View {
+//                AnimeDetailsView(item: Anime(id: 123, url: "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood", images: ["jpg": CoverImage(imageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", smallImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", largeImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg")], trailer: nil, title: "test", titleEnglish: "test", titleJapanese: "測試", titleSynonyms: nil, type: nil, source: nil, episodes: nil, status: nil, airing: nil, aired: nil, duration: nil, rating: nil, score: 5.0, scoredBy: nil, rank: 1.0, popularity: nil, members: nil, favorites: nil, synopsis: nil, background: nil, season: nil, year: nil, broadcast: nil, producers: nil, licensors: nil, studios: nil, genres: nil, explicitGenres: nil, themes: nil, demographics: nil))
+//            }
+//        }
     }
 }
