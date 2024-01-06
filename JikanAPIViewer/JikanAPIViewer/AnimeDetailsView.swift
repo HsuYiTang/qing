@@ -14,16 +14,14 @@ struct AnimeDetailsView: View {
     var body: some View{
         let url = URL(string: item.images?["jpg"]?.largeImageURL ?? "")!
         GeometryReader{ geometry in
-            let width = geometry.size.width
-            let height = geometry.size.height
             ScrollView{
                 VStack{
                     ScrollView([.vertical, .horizontal]){
                         AsyncImage(url: url,content:{ image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
-                            .frame(width: geometry.size.width * zoomScale, height: geometry.size.height * zoomScale)
-                            //.frame(width: geometry.size.width * zoomScale,height : image.size.height / image.size.width * geometry.size.height * zoomScale)
+                                .frame(maxWidth: geometry.size.width * 0.4 * zoomScale,maxHeight:
+                                        geometry.size.width * 0.4 * zoomScale)
                         },placeholder: {
                             ProgressView()
                         })}
@@ -62,23 +60,30 @@ struct AnimeDetailsView: View {
                         }
                     }
                 }
-            }.gesture(pinch)
-        }
+            }
+        }.gesture(pinch)
     }
     // MARK: - Gesture
-    @State private var steadyStateScale: CGFloat = 1.0
+    @State private var steadyStateScale: CGFloat = 1.0{
+        didSet{
+            if oldValue < 1.0 {
+                steadyStateScale = 1.0
+            }else if oldValue > 2.5{
+                steadyStateScale = 2.5
+            }
+        }
+    }
     @GestureState private var gestureScale: CGFloat = 1.0
     
     private var zoomScale: CGFloat {
-//        if steadyStateScale * gestureScale <= 1.0{
-//            return 1.0
-//        }else if steadyStateScale * gestureScale >= 2.5{
-//            return 2.5
-//        }
-//        else{
-//            return steadyStateScale * gestureScale
-//        }
-        return max(steadyStateScale * gestureScale, 1.0)
+        if steadyStateScale * gestureScale <= 1.0{
+            return 1.0
+        }else if steadyStateScale * gestureScale >= 2.5{
+            return 2.5
+        }
+        else{
+            return steadyStateScale * gestureScale
+        }
     }
     
     private var pinch: some Gesture {
