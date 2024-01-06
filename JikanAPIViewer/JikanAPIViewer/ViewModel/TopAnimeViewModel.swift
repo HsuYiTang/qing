@@ -37,12 +37,12 @@ class TopAnimeViewModel: ObservableObject{
                         var newList = [Anime]()
                         
                         for anime in topList {
-                            if !existingList.contains(anime) {
+                            if !existingList.contains(anime) && anime.rank != nil {
                                 newList.append(anime)
                             }
                         }
                         existingList.append(contentsOf: newList)
-                        self.topAnimeList = existingList.sorted(by: { $0.rank ?? 0.0 < $1.rank ?? 0.0 })
+                        self.topAnimeList = existingList.sorted(by: { $0.rank! < $1.rank! })
                     }
                 }
             case .failure(_):
