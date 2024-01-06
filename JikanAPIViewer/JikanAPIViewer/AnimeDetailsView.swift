@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct AnimeDetailsView: View {
+    @State private var showWebView = false
     let item: Anime
     var body: some View{
         let url = URL(string: item.images?["jpg"]?.largeImageURL ?? "")!
@@ -45,6 +46,13 @@ struct AnimeDetailsView: View {
                         Text("Source: ")
                         Text("\(item.source ?? "")")
                     }
+//                    Button {
+//                        showWebView.toggle()
+//                    } label: {
+//                        <#code#>
+//                    }.sheet(isPresented: $showWebView) {
+//                        SafariView(url: URL(string: "https://api.jikan.moe/v4/top/manga?1")!)
+
                     Text("\(item.background ?? "")").padding()
                 }
             }
