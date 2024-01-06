@@ -18,7 +18,7 @@ struct AnimeDetailsView: View {
                     AsyncImage(url: url,content:{ image in
                         image.resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: geometry.size.width * 0.4, maxHeight: geometry.size.height * 0.4)
+                            .frame(maxWidth: geometry.size.width * 0.4 * zoomScale, maxHeight: geometry.size.height * 0.4 * zoomScale)
                     },placeholder: {
                         ProgressView()
                     })
@@ -39,16 +39,40 @@ struct AnimeDetailsView: View {
                             Text("\((item.score ?? 5.0),specifier: "%.2f")")
                                 .foregroundColor( .red)
                             }
+                        Text("\(zoomScale)")
                         }
                     }.frame(maxWidth: .infinity)
                     HStack{
-                        Text("Source: ")
-                        Text("\(item.source ?? "")")
+                        Text("Source: \(item.source ?? "")").padding()
                     }
                     Text("\(item.background ?? "")").padding()
                 }
-            }
+            }.gesture(pinch)
         }
+    }
+    // MARK: - Gesture
+    @State private var steadyStateScale: CGFloat = 1.0
+    @GestureState private var gestureScale: CGFloat = 1.0
+    
+    private var zoomScale: CGFloat {
+        if steadyStateScale * gestureScale <= 1.0{
+            return 1.0
+        }else if steadyStateScale * gestureScale >= 2.5{
+            return 2.5
+        }
+        else{
+            return steadyStateScale * gestureScale
+        }
+    }
+    
+    private var pinch: some Gesture {
+        MagnificationGesture()
+            .updating($gestureScale) { (latestGestureScale, gestureScale, _) in
+                gestureScale = latestGestureScale
+            }
+            .onEnded { (finalGestureScale) in
+                steadyStateScale *= finalGestureScale
+            }
     }
 }
 struct AnimeDetailsView_Previews: PreviewProvider {
