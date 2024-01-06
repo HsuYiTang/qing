@@ -11,11 +11,10 @@ import SwiftUI
 struct AnimeDetailsView: View {
     let item: Anime
     var body: some View{
+        let url = URL(string: item.images?["jpg"]?.largeImageURL ?? "")!
         GeometryReader{ geometry in
             ScrollView{
                 VStack{
-                HStack{
-                    let url = URL(string: item.images?["jpg"]?.largeImageURL ?? "")!
                     AsyncImage(url: url,content:{ image in
                         image.resizable()
                             .aspectRatio(contentMode: .fit)
@@ -23,6 +22,7 @@ struct AnimeDetailsView: View {
                     },placeholder: {
                         ProgressView()
                     })
+                HStack{
                     VStack(alignment: .leading){
                         Text("\(item.titleJapanese ?? "")")
                             .font(.title)
