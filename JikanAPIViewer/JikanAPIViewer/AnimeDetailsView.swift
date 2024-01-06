@@ -14,15 +14,19 @@ struct AnimeDetailsView: View {
     var body: some View{
         let url = URL(string: item.images?["jpg"]?.largeImageURL ?? "")!
         GeometryReader{ geometry in
+            let width = geometry.size.width
+            let height = geometry.size.height
             ScrollView{
                 VStack{
-                    AsyncImage(url: url,content:{ image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: geometry.size.width * 0.4 * zoomScale, maxHeight: geometry.size.height * 0.4 * zoomScale)
-                    },placeholder: {
-                        ProgressView()
-                    })
+                    ScrollView([.vertical, .horizontal]){
+                        AsyncImage(url: url,content:{ image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                            .frame(width: geometry.size.width * zoomScale, height: geometry.size.height * zoomScale)
+                            //.frame(width: geometry.size.width * zoomScale,height : image.size.height / image.size.width * geometry.size.height * zoomScale)
+                        },placeholder: {
+                            ProgressView()
+                        })}
                     HStack{
                         VStack(alignment: .leading){
                             Text("\(item.titleJapanese ?? "")")
@@ -66,14 +70,15 @@ struct AnimeDetailsView: View {
     @GestureState private var gestureScale: CGFloat = 1.0
     
     private var zoomScale: CGFloat {
-        if steadyStateScale * gestureScale <= 1.0{
-            return 1.0
-        }else if steadyStateScale * gestureScale >= 2.5{
-            return 2.5
-        }
-        else{
-            return steadyStateScale * gestureScale
-        }
+//        if steadyStateScale * gestureScale <= 1.0{
+//            return 1.0
+//        }else if steadyStateScale * gestureScale >= 2.5{
+//            return 2.5
+//        }
+//        else{
+//            return steadyStateScale * gestureScale
+//        }
+        return max(steadyStateScale * gestureScale, 1.0)
     }
     
     private var pinch: some Gesture {
@@ -85,15 +90,9 @@ struct AnimeDetailsView: View {
                 steadyStateScale *= finalGestureScale
             }
     }
-}\*
-struct AnimeDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimeDetailsView(item: Anime(id: 123, url: "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood", images: ["jpg": CoverImage(imageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", smallImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", largeImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg")], trailer: nil, title: "test", titleEnglish: "test", titleJapanese: "測試", titleSynonyms: nil, type: nil, source: nil, episodes: nil, status: nil, airing: nil, aired: nil, duration: nil, rating: nil, score: 5.0, scoredBy: nil, rank: 1.0, popularity: nil, members: nil, favorites: nil, synopsis: nil, background: nil, season: nil, year: nil, broadcast: nil, producers: nil, licensors: nil, studios: nil, genres: nil, explicitGenres: nil, themes: nil, demographics: nil))*/
-=======
+}
 //        struct AnimeDetailsView_Previews: PreviewProvider {
 //            static var previews: some View {
 //                AnimeDetailsView(item: Anime(id: 123, url: "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood", images: ["jpg": CoverImage(imageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", smallImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", largeImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg")], trailer: nil, title: "test", titleEnglish: "test", titleJapanese: "測試", titleSynonyms: nil, type: nil, source: nil, episodes: nil, status: nil, airing: nil, aired: nil, duration: nil, rating: nil, score: 5.0, scoredBy: nil, rank: 1.0, popularity: nil, members: nil, favorites: nil, synopsis: nil, background: nil, season: nil, year: nil, broadcast: nil, producers: nil, licensors: nil, studios: nil, genres: nil, explicitGenres: nil, themes: nil, demographics: nil))
 //            }
-        }
-    }
-}
+
