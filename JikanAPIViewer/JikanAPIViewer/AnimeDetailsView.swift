@@ -40,7 +40,7 @@ struct AnimeDetailsView: View {
                                 .foregroundColor( .red)
                             }
                         }
-                    }
+                    }.frame(maxWidth: .infinity)
                     HStack{
                         Text("Source: ")
                         Text("\(item.source ?? "")")
