@@ -20,6 +20,7 @@ class TopAnimeViewModel: ObservableObject{
             fetchTopAnime(page: 1)
         }
     }
+    
     private func fetchTopAnime(page: Int) {
         isLoading = true
         
@@ -41,7 +42,6 @@ class TopAnimeViewModel: ObservableObject{
                             }
                         }
                         existingList.append(contentsOf: newList)
-                        
                         self.topAnimeList = existingList.sorted(by: { $0.rank! < $1.rank! })
                     }
                 }
@@ -52,6 +52,12 @@ class TopAnimeViewModel: ObservableObject{
             }
         })
     }
+    
+    func fetchNextAnimePage() {
+        fetchTopAnime(page: loadedAnimePage + 1)
+        loadedAnimePage += 1
+    }
+    
     func refreshCurrentList() {
         fetchTopAnime( page: loadedAnimePage)
     }

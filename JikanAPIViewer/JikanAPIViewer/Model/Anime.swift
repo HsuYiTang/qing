@@ -31,7 +31,7 @@ struct Anime: Codable, Identifiable, Equatable {
     let airing: Bool?
     let aired: Aired?
     let duration, rating: String?
-    let score, scoredBy, rank, popularity: Float?
+    let score, scoredBy, rank, popularity: Float!
     let members, favorites: Int?
     let synopsis, background, season: String?
     let year: Int?
