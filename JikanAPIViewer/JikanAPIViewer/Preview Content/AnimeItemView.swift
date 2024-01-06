@@ -14,7 +14,6 @@ struct AnimeItemView: View{
     var body: some View{
         HStack{
             rankView(rank: Int(item.rank ?? 0))
-                .font(.title)
                 .opacity(showRank ? 1.0 : 0.0)
             let url = URL(string: item.images?["jpg"]?.imageURL ?? "")!
             AsyncImage(url: url,content:{ image in

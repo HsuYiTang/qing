@@ -13,6 +13,7 @@ struct rankView: View {
     var body: some View{
         Text("\(rank)")
             .fontWeight(rank <= 3 ? .bold : nil)
+            .font(rank <= 3 ? .title : .callout)
             .frame(width: 40, height: 20)
             .padding()
             .foregroundColor(.white).background{

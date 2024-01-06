@@ -22,7 +22,7 @@ struct AnimeDetailsView: View {
                         AsyncImage(url: url,content:{ image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
-                            .frame(width: geometry.size.width * zoomScale, height: geometry.size.height * zoomScale)
+                                .frame(width: geometry.size.width > geometry.size.height ? geometry.size.height * zoomScale : geometry.size.width * zoomScale, height: geometry.size.width > geometry.size.height ? geometry.size.width * zoomScale : geometry.size.height * zoomScale)
                             //.frame(width: geometry.size.width * zoomScale,height : image.size.height / image.size.width * geometry.size.height * zoomScale)
                         },placeholder: {
                             ProgressView()

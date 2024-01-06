@@ -13,7 +13,8 @@ struct TopAnimeView: View{
     var body: some View{
             ZStack {
                 AnimeList
-            }.navigationTitle("Top Ranking")
+            }
+            .navigationTitle("Top Ranking")
                 .refreshable {
                     viewModel.refreshCurrentList()
                 }
