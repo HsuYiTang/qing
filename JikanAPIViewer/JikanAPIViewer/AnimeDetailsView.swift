@@ -42,7 +42,6 @@ struct AnimeDetailsView: View {
                                 Text("\((item.score ?? 5.0),specifier: "%.2f")")
                                     .foregroundColor( .red)
                             }
-                        Text("\(zoomScale)")
                         }
                     }.frame(maxWidth: .infinity)
                     HStack{
