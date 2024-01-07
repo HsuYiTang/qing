@@ -21,7 +21,6 @@ struct AnimeDetailsView: View {
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: geometry.size.width > geometry.size.height ? geometry.size.height * 0.4 * zoomScale : geometry.size.width * 0.4 * zoomScale, height: geometry.size.width > geometry.size.height ? geometry.size.width * 0.4 * zoomScale : geometry.size.height * 0.4 * zoomScale)
-                            //.frame(width: geometry.size.width * zoomScale,height : image.size.height / image.size.width * geometry.size.height * zoomScale)
                         },placeholder: {
                             ProgressView()
                         })}
