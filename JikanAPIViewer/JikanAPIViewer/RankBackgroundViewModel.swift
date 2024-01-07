@@ -61,7 +61,7 @@ enum ShineColor{
         )
     }
 }
-fileprivate extension Color {
+extension Color {
     init(hex: UInt, alpha: Double = 1) {
         self.init( .sRGB,
                    red: Double((hex >> 16) & 0xff) / 255,
