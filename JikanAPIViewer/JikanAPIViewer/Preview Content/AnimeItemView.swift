@@ -24,10 +24,15 @@ struct AnimeItemView: View{
                 ProgressView()
             })
             VStack(alignment: .leading) {
-                Text("\(item.titleJapanese ?? "")")
+                Text("名字：\(item.titleJapanese ?? "")")
                     .lineLimit(3)
-                Text("\(item.type ?? "")")
-                Text("\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
+                    .font(.system(size: 18))
+                Text("類型：\(item.type ?? "")")
+                    .font(.system(size: 14))
+                Text(item.type == "Movie" ? "播放日期：\(item.aired?.from?.dateFormated() ?? "")" : "播放日期：\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
+                    .font(.system(size: 14))
+                    .lineLimit(3)
+                Text("評分：\(item.score ?? 0.0, specifier: "%.2f")")
                     .font(.system(size: 14))
             }
         }

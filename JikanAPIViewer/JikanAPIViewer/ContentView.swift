@@ -16,28 +16,31 @@ struct ContentView: View {
                 Text("JikanAPI")
                     .foregroundColor(Color(hex: 0xA69A25))
                     .fontWeight(.heavy)
-                    .font(.system(size: 80))
+                    .font(.system(size: 75))
                 Text("Viewer")
-                    .font(.largeTitle)
+                    //.font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(Color(hex: 0xA69A25))
-                Text("the viewer of jikan API")
-                    .foregroundColor(.gray)
+                    .font(.system(size: 75))
                 Spacer()
                 NavigationLink(destination: TopAnimeView().environmentObject(viewModel), isActive: $isLinkActive) {
                     Button {
                         print("Click Button")
                         self.isLinkActive = true
                     } label: {
-                        Text("GO")
+                        Text("Go")
                             .font(.title)
                     }.controlSize(.large)
                         .padding()
                         .buttonStyle(ButtonView())
                 }
                 Spacer()
+                Text("the viewer of jikan API")
+                    .foregroundColor(.gray)
+                    .font(.footnote)
+                    .fontWeight(.light)
             }.frame(maxWidth:.infinity)
-            .background(Color("ViewPage"))
+            //.background(Color("ViewPage"))
         }
     }
 }
