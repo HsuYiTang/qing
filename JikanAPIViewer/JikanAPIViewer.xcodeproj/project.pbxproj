@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B344CFFF2B4AD86B00246654 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B344CFFE2B4AD86B00246654 /* ColorExtension.swift */; };
 		B356383F2B4690F100CCC639 /* AnimeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356383E2B4690F100CCC639 /* AnimeItemView.swift */; };
 		B35638412B46989A00CCC639 /* DateFormatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35638402B46989A00CCC639 /* DateFormatExtension.swift */; };
 		B3633DFB2B4994EC00960DAE /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3633DFA2B4994EC00960DAE /* RankView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B344CFFE2B4AD86B00246654 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B356383E2B4690F100CCC639 /* AnimeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimeItemView.swift; path = "Preview Content/AnimeItemView.swift"; sourceTree = "<group>"; };
 		B35638402B46989A00CCC639 /* DateFormatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatExtension.swift; sourceTree = "<group>"; };
 		B3633DFA2B4994EC00960DAE /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				B35638402B46989A00CCC639 /* DateFormatExtension.swift */,
 				B3633DFA2B4994EC00960DAE /* RankView.swift */,
 				B3633DFC2B499AD800960DAE /* RankBackgroundViewModel.swift */,
+				B344CFFE2B4AD86B00246654 /* ColorExtension.swift */,
 				B3706C942B4648530057F6BB /* Assets.xcassets */,
 				B3706C962B4648530057F6BB /* Preview Content */,
 			);
@@ -212,6 +215,7 @@
 				B3706CAB2B465C0A0057F6BB /* Anime.swift in Sources */,
 				B3633DFB2B4994EC00960DAE /* RankView.swift in Sources */,
 				B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */,
+				B344CFFF2B4AD86B00246654 /* ColorExtension.swift in Sources */,
 				B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */,
 				FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */,
 				B35638412B46989A00CCC639 /* DateFormatExtension.swift in Sources */,
