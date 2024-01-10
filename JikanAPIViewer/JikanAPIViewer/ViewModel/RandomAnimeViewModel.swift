@@ -1,10 +1,3 @@
-//
-//  RandomAnimeViewModel.swift
-//  JikanAPIViewer
-//
-//  Created by 徐翊棠 on 2024/1/11.
-//
-
 import Foundation
 
 class RandomAnimeViewModel: ObservableObject{
@@ -15,6 +8,7 @@ class RandomAnimeViewModel: ObservableObject{
     init(APIService: JikanAPIServiceProtocol = JikanAPIService()){
         self.APIService = APIService
     }
+    
     func initAnimeList(){
         fetchRandomAnime()
     }

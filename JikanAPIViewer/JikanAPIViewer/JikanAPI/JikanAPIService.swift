@@ -89,6 +89,7 @@ extension JikanAPIService {
         
         httpGETRequest(url: url, completionHandler: completionHandler)
     }
+    
     func fetchRandomAnime(completionHandler: @escaping (Result<JikanAPIGetAnime, JikanAPIServiceError>) -> Void) {
         
         guard let url = makeURL(endpoint: "/random/anime") else {

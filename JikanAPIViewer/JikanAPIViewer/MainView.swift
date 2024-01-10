@@ -7,16 +7,23 @@ struct MainView: View {
     var body: some View {
         TabView {
             TopAnimeView()
+                .onAppear(){
+                    randomAnimeViewModel.initAnimeList()
+                }
                 .environmentObject(viewModel)
                 .environmentObject(searchViewModel)
                 .tabItem {
                     Label("排行榜", systemImage: "list.number")
                 }
-            RandomAnimeView().environmentObject(randomAnimeViewModel)
+            RandomAnimeView()
+                .environmentObject(randomAnimeViewModel)
                 .tabItem{
-                    Label("好手氣",systemImage:"")
+                    Label("好手氣",systemImage:"lightbulb.circle")
                 }
             AnimeSearchView()
+                .onAppear(){
+                    randomAnimeViewModel.initAnimeList()
+                }
                 .environmentObject(searchViewModel)
                 .tabItem {
                    Label("搜尋", systemImage: "magnifyingglass")

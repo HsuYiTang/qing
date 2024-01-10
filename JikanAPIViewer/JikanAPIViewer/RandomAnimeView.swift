@@ -1,10 +1,3 @@
-//
-//  RandomAnimeView.swift
-//  JikanAPIViewer
-//
-//  Created by 徐翊棠 on 2024/1/11.
-//
-
 import Foundation
 import SwiftUI
 
@@ -21,9 +14,6 @@ struct RandomAnimeView: View{
             .navigationTitle("")
             .refreshable {
                 randomAnimeViewModel.refreshCurrentList()
-            }
-            .onAppear() {
-                randomAnimeViewModel.initAnimeList()
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }

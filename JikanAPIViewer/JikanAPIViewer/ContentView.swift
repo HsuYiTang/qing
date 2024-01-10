@@ -9,13 +9,13 @@ struct ContentView: View {
                 Spacer()
                 Text("JikanAPI")
                     .foregroundColor(.indigo)
-                    //.foregroundColor(Color(hex: 0xA69A25))
+                //.foregroundColor(Color(hex: 0xA69A25))
                     .fontWeight(.heavy)
                     .font(.system(size: 75))
                 Text("Viewer")
                     .fontWeight(.heavy)
                     .foregroundColor(.indigo)
-                    //.foregroundColor(Color(hex: 0xA69A25))
+                //.foregroundColor(Color(hex: 0xA69A25))
                     .font(.system(size: 75))
                 Spacer()
                 NavigationLink(destination: MainView().environmentObject(viewModel), isActive: $isLinkActive) {
@@ -33,7 +33,8 @@ struct ContentView: View {
                     .foregroundColor(.black)
                     .font(.footnote)
                     .fontWeight(.light)
-            }.frame(maxWidth:.infinity)
+            }
+            .frame(maxWidth:.infinity)
                 .background(Image("back"))
         }
     }

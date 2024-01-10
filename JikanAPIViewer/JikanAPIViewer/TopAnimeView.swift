@@ -4,6 +4,7 @@ import SwiftUI
 struct TopAnimeView: View{
     @EnvironmentObject private var viewModel: TopAnimeViewModel
     @EnvironmentObject private var animeSearchViewModel: AnimeSearchViewModel
+    @EnvironmentObject private var randomViewModel: RandomAnimeViewModel
     var body: some View{
         NavigationView {
             ZStack {
