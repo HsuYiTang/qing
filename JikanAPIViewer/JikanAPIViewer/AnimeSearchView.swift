@@ -8,18 +8,18 @@ struct AnimeSearchView: View {
                 SearchBar().environmentObject(animeSearchViewModel)
                 ZStack {
                     AnimeList
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationTitle("搜尋")
-                        .refreshable {
-                                animeSearchViewModel.refreshCurrentList()
-                        }
-                        .onAppear() {
-                            animeSearchViewModel.initTopAnimeList()
-                        }
-                        .navigationViewStyle(StackNavigationViewStyle())
                     ProgressView()
                     .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)}
                 }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("搜尋")
+            .refreshable {
+                    animeSearchViewModel.refreshCurrentList()
+            }
+            .onAppear() {
+                animeSearchViewModel.initTopAnimeList()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
     var AnimeList: some View{
@@ -34,7 +34,7 @@ struct AnimeSearchView: View {
                 }
             }
         }.onAppear(){
-            animeSearchViewModel.searchAnime(name: animeSearchViewModel.name)
+            animeSearchViewModel.searchAnime(name: animeSearchViewModel.cache != nil ? animeSearchViewModel.cache! : "")
         }
     }
 }

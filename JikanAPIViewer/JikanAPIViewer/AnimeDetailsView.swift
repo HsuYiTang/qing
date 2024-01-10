@@ -1,12 +1,6 @@
-//
-//  AnimeDetailsView.swift
-//  JikanAPIViewer
-//
-//  Created by 徐翊棠 on 2024/1/5.
-//
-
 import Foundation
 import SwiftUI
+import Marquee
 
 struct AnimeDetailsView: View {
     @State private var showWebView = false
@@ -27,30 +21,27 @@ struct AnimeDetailsView: View {
                     VStack{
                         VStack{
                             Text("\(item.titleJapanese ?? "")")
-                                .font(.title)
-                                .fontWeight(.bold)
-                            Text("\(item.titleEnglish ?? "")")
-                            HStack{
-                                Text("Streaming platform:")
-                                Text("\(item.type ?? "")")
-                            }.aspectRatio(contentMode: .fit)
-                            Text("\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
-                                .font(.system(size: 14))
-                            HStack(alignment: .bottom){
-                                Text("RANK:")
                                     .font(.title)
-                                    .fontWeight(.bold)
-                                rankView(rank: Int(item.rank ?? 0))
-                                Text("score: ")
-                                Text("\((item.score ?? 5.0),specifier: "%.2f")")
+                                    //.fontWeight(.bold)
+                            Text("\(item.titleEnglish ?? "")")
+                            Text("類型:\(item.type ?? "")")
+                        HStack{
+                            Text("日期:")
+                            Text(item.type == "Movie" ? "\(item.aired?.from?.dateFormated() ?? "")" : "\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
+                        }.aspectRatio(contentMode: .fit)
+                            HStack(alignment: .bottom){
+                                Text("排名:\(Int(item.rank ?? 0))")
+                                    .font(Int(item.rank ?? 0) <= 3 ? .title : .system(.callout))
+                                    .fontWeight(Int(item.rank ?? 0) <= 3 ? .bold : nil)
+                                Text("評分: \((item.score ?? 0.0),specifier: "%.2f")")
                                     .foregroundColor( .red)
                             }
                         }
                     }.frame(maxWidth: .infinity)
                     HStack{
-                        Text("Source: \(item.source ?? "")").padding()
+                        Text("原作: \(item.source ?? "")").padding()
                     }
-                    Text("\(item.background ?? "")").padding()
+                    Text((item.background != nil) ? "描述:\(item.background!)" : "").padding()
                     Button {
                         showWebView.toggle()
                     } label: {

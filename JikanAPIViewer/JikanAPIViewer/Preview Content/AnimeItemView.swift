@@ -1,10 +1,3 @@
-//
-//  AnimeItemView.swift
-//  JikanAPIViewer
-//
-//  Created by 徐翊棠 on 2024/1/4.
-//
-
 import Foundation
 import SwiftUI
 import Marquee
@@ -22,14 +15,16 @@ struct AnimeItemView: View{
                 AsyncImage(url: url,content:{ image in
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 80, maxHeight: 100)
+                        .frame(/*maxWidth: 80, */minHeight: 80, maxHeight: 100)
                 },placeholder: {
                     ProgressView()
+                        .aspectRatio(contentMode: .fit)
+                        .frame( maxWidth: 80, maxHeight: 100)
                 })
                 VStack(alignment: .leading) {
                     Marquee {
                         Text("\(item.titleJapanese ?? "")")
-                            .font(.system(size: 18,weight: .heavy))
+                            .font(.system(size: 14,weight: .heavy))
                     }
                     .marqueeWhenNotFit(true)
                         .marqueeDuration(5)
@@ -38,12 +33,12 @@ struct AnimeItemView: View{
                     Text("評分：\(item.score ?? 0.0, specifier: "%.2f")")
                         .font(.system(size: 14))
                     HStack {
-                        Text(item.type == "Movie" ? "日期：" : "日期：")
+                        Text("日期：")
                             .font(.system(size: 14))
-                        Marquee {
-                            Text(item.type == "Movie" ? "\(item.aired?.from?.dateFormated() ?? "")" : "\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
+                    Marquee {
+                        Text(item.type == "Movie" ? "\(item.aired?.from?.dateFormated() ?? "")" : "\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
                                 .font(.system(size: 14))
-                        }
+                    }
                         .marqueeWhenNotFit(true)
                         .marqueeDuration(5)
                     }

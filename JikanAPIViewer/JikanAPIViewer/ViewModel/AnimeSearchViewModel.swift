@@ -4,6 +4,7 @@ class AnimeSearchViewModel: ObservableObject {
     @Published var animeResult: [Anime] = [Anime]()
     @Published var isLoading = false
     @Published var name = ""
+    @Published var cache: String?
     private var APIService: JikanAPIServiceProtocol
     init(APIService: JikanAPIServiceProtocol = JikanAPIService()){
         self.APIService = APIService

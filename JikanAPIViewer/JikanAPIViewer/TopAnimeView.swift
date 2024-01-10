@@ -1,10 +1,3 @@
-//
-//  TopAnimeView.swift
-//  JikanAPIViewer
-//
-//  Created by 徐翊棠 on 2024/1/4.
-//
-
 import Foundation
 import SwiftUI
 
@@ -15,16 +8,17 @@ struct TopAnimeView: View{
         NavigationView {
             ZStack {
                 AnimeList
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle("Top Rank")
-                    .refreshable {
-                        viewModel.refreshCurrentList()
-                    }
-                    .onAppear() {
-                        viewModel.initTopAnimeList()
-                    }
+                    
                 ProgressView()
                     .opacity(viewModel.isLoading ? 1.0: 0.0)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("排行榜")
+            .refreshable {
+                viewModel.refreshCurrentList()
+            }
+            .onAppear() {
+                viewModel.initTopAnimeList()
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }

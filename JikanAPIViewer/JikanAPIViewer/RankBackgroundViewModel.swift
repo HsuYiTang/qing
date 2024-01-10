@@ -1,4 +1,3 @@
-//
 import Foundation
 import SwiftUI
 func RankViewBackgroundColor(_ rank: Int) -> LinearGradient {

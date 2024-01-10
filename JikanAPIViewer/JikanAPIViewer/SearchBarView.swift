@@ -3,7 +3,6 @@ import SwiftUI
 struct SearchBar: View {
     @EnvironmentObject private var animeSearchViewModel: AnimeSearchViewModel
     @State private var isEditing = false
-
     var body: some View {
         HStack {
             TextField("輸入要搜尋的動畫名稱", text: $animeSearchViewModel.name)
@@ -39,19 +38,20 @@ struct SearchBar: View {
                 HStack {
                     Button {
                         animeSearchViewModel.searchAnime(name: animeSearchViewModel.name)
+                        animeSearchViewModel.cache = animeSearchViewModel.name
                     } label: {
                         Text("Search")
-                    }
+                    }.buttonStyle(ButtonView())
                     Button(action: {
                         self.isEditing = false
                         animeSearchViewModel.name = ""
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }) {
                         Text("Cancel")
-                    }
+                    }.animation(.linear)
+                    .buttonStyle(ButtonView())
                     .padding(.trailing, 10)
                     .transition(.move(edge: .trailing))
-                    .animation(.default)
                 }
             }
         }

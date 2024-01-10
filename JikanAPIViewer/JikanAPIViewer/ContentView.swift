@@ -20,7 +20,6 @@ struct ContentView: View {
                 Spacer()
                 NavigationLink(destination: MainView().environmentObject(viewModel), isActive: $isLinkActive) {
                     Button {
-                        print("Click Button")
                         self.isLinkActive = true
                     } label: {
                         Text("前往")

@@ -1,16 +1,9 @@
-//
-//  ButtonView.swift
-//  FInal
-//
-//  Created by MengChen on 2024/1/4.
-//
-
 import SwiftUI
 
 struct ButtonView: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding()
+            .padding(3)
             .background(LinearGradient(gradient: Gradient(colors: [Color.indigo, Color.purple]), startPoint: .leading, endPoint: .trailing))
             .foregroundStyle(.white)
             .clipShape(Capsule())

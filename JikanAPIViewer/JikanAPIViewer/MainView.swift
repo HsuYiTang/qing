@@ -9,13 +9,13 @@ struct MainView: View {
                 .environmentObject(viewModel)
                 .environmentObject(searchViewModel)
                 .tabItem {
-                    Label("Top Rank", systemImage: "list.number")
+                    Label("排行榜", systemImage: "list.number")
                 }
 
             AnimeSearchView()
                 .environmentObject(searchViewModel)
                 .tabItem {
-                   Label("Search", systemImage: "magnifyingglass")
+                   Label("搜尋", systemImage: "magnifyingglass")
                 }
         }
     }
