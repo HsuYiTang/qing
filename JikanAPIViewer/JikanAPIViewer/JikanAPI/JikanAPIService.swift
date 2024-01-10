@@ -46,6 +46,10 @@ struct JikanAPIService: JikanAPIServiceProtocol {
         return URL(string: baseURL + "\(endpoint)?\(param)")
     }
     
+    private func makeSearchURL(param: String) -> URL? {
+        return URL(string: baseURL + "\(param)")
+    }
+    
     private func httpGETRequest<T: Codable>(url: URL, completionHandler: @escaping (Result<T, JikanAPIServiceError>) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -85,7 +89,7 @@ extension JikanAPIService {
     func fetchAnime(name: String, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void) {
         let param  = "\(name)"
         
-        guard makeURL(endpoint: "", param: param) != nil else {
+        guard makeSearchURL(param: param) != nil else {
             completionHandler(.failure(.urlError))
             return
         }
