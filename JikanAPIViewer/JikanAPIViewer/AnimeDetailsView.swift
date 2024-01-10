@@ -37,20 +37,19 @@ struct AnimeDetailsView: View {
                             Text("\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
                                 .font(.system(size: 14))
                             HStack(alignment: .bottom){
-                                Text("RANK:")
-                                    .font(.title)
+                                Text("Rank:\(Int(item.rank ?? 0))")
                                     .fontWeight(.bold)
-                                rankView(rank: Int(item.rank ?? 0))
                                 Text("score: ")
                                 Text("\((item.score ?? 5.0),specifier: "%.2f")")
                                     .foregroundColor( .red)
                             }
                         }
                     }.frame(maxWidth: .infinity)
-                    HStack{
-                        Text("Source: \(item.source ?? "")").padding()
-                    }
-                    //Text("\(item.background ?? "")").padding()
+                    
+                    Text("Source: \(item.source ?? "")").padding()
+                    
+                    Text("Background: \(item.background ?? "")").padding()
+                    
                     Button {
                         showWebView.toggle()
                     } label: {
@@ -98,8 +97,3 @@ struct AnimeDetailsView: View {
             }
     }
 }
-//        struct AnimeDetailsView_Previews: PreviewProvider {
-//            static var previews: some View {
-//                AnimeDetailsView(item: Anime(id: 123, url: "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood", images: ["jpg": CoverImage(imageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", smallImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", largeImageURL: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg")], trailer: nil, title: "test", titleEnglish: "test", titleJapanese: "測試", titleSynonyms: nil, type: nil, source: nil, episodes: nil, status: nil, airing: nil, aired: nil, duration: nil, rating: nil, score: 5.0, scoredBy: nil, rank: 1.0, popularity: nil, members: nil, favorites: nil, synopsis: nil, background: nil, season: nil, year: nil, broadcast: nil, producers: nil, licensors: nil, studios: nil, genres: nil, explicitGenres: nil, themes: nil, demographics: nil))
-//            }
-
