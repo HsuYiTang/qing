@@ -1,17 +1,18 @@
 import Foundation
+
 class AnimeSearchViewModel: ObservableObject {
     @Published var animeResult: [Anime] = [Anime]()
     @Published var isLoading = false
-    private var animeName = ""
+    private var name = ""
     private var APIService: JikanAPIServiceProtocol
     init(APIService: JikanAPIServiceProtocol = JikanAPIService()){
         self.APIService = APIService
     }
-    func initTopAnimeList(){
-        if animeResult.isEmpty {
-            fetchAnime(name: "")
-        }
-    }
+//    func initAnimeList(){
+//        if animeResult.isEmpty {
+//            fetchAnime(name: "")
+//        }
+//    }
     private func fetchAnime(name: String) {
         isLoading = true
 
@@ -42,5 +43,13 @@ class AnimeSearchViewModel: ObservableObject {
                 }
             }
         })
+    }
+    
+    func searchAnime(name: String) {
+        fetchAnime(name: name)
+    }
+    
+    func refreshCurrentList() {
+        fetchAnime(name: name)
     }
 }

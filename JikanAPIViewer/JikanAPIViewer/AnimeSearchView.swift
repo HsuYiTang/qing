@@ -2,13 +2,35 @@ import SwiftUI
 
 struct AnimeSearchView: View {
     @EnvironmentObject private var animeSearchViewModel: AnimeSearchViewModel
+    @State var name: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                SearchBar(text: $name)
+                ZStack {
+                    AnimeList
+                }
+                ProgressView()
+                .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)}.navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("搜尋")
+                .refreshable {
+                        animeSearchViewModel.refreshCurrentList()
+                }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
-}
-
-struct AnimeSearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimeSearchView()
+    var AnimeList: some View{
+        List{
+            ForEach(animeSearchViewModel.animeResult,id: \.id){ item in
+                NavigationLink {
+                    if let anime = item{
+                        AnimeDetailsView(item: anime)
+                    }
+                } label: {
+                    AnimeItemView(item: item)
+                }
+            }
+        }.onAppear() {
+            animeSearchViewModel.searchAnime(name: name)
+       }
     }
 }

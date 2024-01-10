@@ -28,6 +28,7 @@
 		FCDE74EA2B4E7338004225B6 /* AnimeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74E92B4E7338004225B6 /* AnimeSearchViewModel.swift */; };
 		FCDE74EC2B4E75D2004225B6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74EB2B4E75D2004225B6 /* MainView.swift */; };
 		FCDE74EE2B4E7643004225B6 /* AnimeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74ED2B4E7643004225B6 /* AnimeSearchView.swift */; };
+		FCDE74F02B4E7E1D004225B6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74EF2B4E7E1D004225B6 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FCDE74E92B4E7338004225B6 /* AnimeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSearchViewModel.swift; sourceTree = "<group>"; };
 		FCDE74EB2B4E75D2004225B6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FCDE74ED2B4E7643004225B6 /* AnimeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSearchView.swift; sourceTree = "<group>"; };
+		FCDE74EF2B4E7E1D004225B6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				B3706CA32B465C0A0057F6BB /* Preview Content */,
 				B3706C902B4648510057F6BB /* JikanAPIViewerApp.swift */,
 				FCDE74ED2B4E7643004225B6 /* AnimeSearchView.swift */,
+				FCDE74EF2B4E7E1D004225B6 /* SearchBarView.swift */,
 				B3706C922B4648510057F6BB /* ContentView.swift */,
 				FCDE74EB2B4E75D2004225B6 /* MainView.swift */,
 				FCCCB1592B498150007472C6 /* ButtonView.swift */,
@@ -236,6 +239,7 @@
 				B344CFFF2B4AD86B00246654 /* ColorExtension.swift in Sources */,
 				B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */,
 				FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */,
+				FCDE74F02B4E7E1D004225B6 /* SearchBarView.swift in Sources */,
 				FCDE74EC2B4E75D2004225B6 /* MainView.swift in Sources */,
 				FCDE74EA2B4E7338004225B6 /* AnimeSearchViewModel.swift in Sources */,
 				B35638412B46989A00CCC639 /* DateFormatExtension.swift in Sources */,
