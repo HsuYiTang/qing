@@ -25,6 +25,7 @@ enum JikanAPIServiceError: Error, Equatable {
 protocol JikanAPIServiceProtocol {
     func fetchTopAnime(page: Int, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void)
     func fetchAnime(name: String, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void)
+    func fetchRandomAnime(completionHandler: @escaping (Result<JikanAPIGetAnime, JikanAPIServiceError>) -> Void)
 }
 
 struct JikanAPIService: JikanAPIServiceProtocol {
@@ -37,6 +38,9 @@ struct JikanAPIService: JikanAPIServiceProtocol {
     
     private func makeURL(endpoint: String, param: String) -> URL? {
         return URL(string: baseURL + "\(endpoint)?\(param)")
+    }
+    private func makeURL(endpoint: String) -> URL? {
+        return URL(string: baseURL + "\(endpoint)")
     }
     
     private func httpGETRequest<T: Codable>(url: URL, completionHandler: @escaping (Result<T, JikanAPIServiceError>) -> Void) {
@@ -79,6 +83,15 @@ extension JikanAPIService {
         let param  = "\(name)"
         
         guard let url = makeURL(endpoint: "/anime?q=\(name)", param: param) else {
+            completionHandler(.failure(.urlError))
+            return
+        }
+        
+        httpGETRequest(url: url, completionHandler: completionHandler)
+    }
+    func fetchRandomAnime(completionHandler: @escaping (Result<JikanAPIGetAnime, JikanAPIServiceError>) -> Void) {
+        
+        guard let url = makeURL(endpoint: "/random/anime") else {
             completionHandler(.failure(.urlError))
             return
         }

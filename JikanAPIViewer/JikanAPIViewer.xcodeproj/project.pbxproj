@@ -24,6 +24,8 @@
 		B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706CAE2B4660E00057F6BB /* TopAnimeViewModel.swift */; };
 		B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380670D2B4841870088B662 /* AnimeDetailsView.swift */; };
 		B3C3036E2B4EAA1B00412053 /* Marquee in Frameworks */ = {isa = PBXBuildFile; productRef = B3C3036D2B4EAA1B00412053 /* Marquee */; };
+		B3C303702B4F087800412053 /* RandomAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C3036F2B4F087800412053 /* RandomAnimeViewModel.swift */; };
+		B3C303722B4F0A9900412053 /* RandomAnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C303712B4F0A9900412053 /* RandomAnimeView.swift */; };
 		FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB1592B498150007472C6 /* ButtonView.swift */; };
 		FCDE74EA2B4E7338004225B6 /* AnimeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74E92B4E7338004225B6 /* AnimeSearchViewModel.swift */; };
 		FCDE74EC2B4E75D2004225B6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74EB2B4E75D2004225B6 /* MainView.swift */; };
@@ -49,6 +51,8 @@
 		B3706CA62B465C0A0057F6BB /* Anime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
 		B3706CAE2B4660E00057F6BB /* TopAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAnimeViewModel.swift; sourceTree = "<group>"; };
 		B380670D2B4841870088B662 /* AnimeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsView.swift; sourceTree = "<group>"; };
+		B3C3036F2B4F087800412053 /* RandomAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAnimeViewModel.swift; sourceTree = "<group>"; };
+		B3C303712B4F0A9900412053 /* RandomAnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAnimeView.swift; sourceTree = "<group>"; };
 		FCCCB1592B498150007472C6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FCDE74E92B4E7338004225B6 /* AnimeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSearchViewModel.swift; sourceTree = "<group>"; };
 		FCDE74EB2B4E75D2004225B6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				B3706C9E2B464DC80057F6BB /* TopAnimeView.swift */,
 				B3706CA22B465C090057F6BB /* WebView.swift */,
 				B356383E2B4690F100CCC639 /* AnimeItemView.swift */,
+				B3C303712B4F0A9900412053 /* RandomAnimeView.swift */,
 				B380670D2B4841870088B662 /* AnimeDetailsView.swift */,
 				B35638402B46989A00CCC639 /* DateFormatExtension.swift */,
 				B3633DFA2B4994EC00960DAE /* RankView.swift */,
@@ -148,6 +153,7 @@
 			children = (
 				B3706CAE2B4660E00057F6BB /* TopAnimeViewModel.swift */,
 				FCDE74E92B4E7338004225B6 /* AnimeSearchViewModel.swift */,
+				B3C3036F2B4F087800412053 /* RandomAnimeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				B356383F2B4690F100CCC639 /* AnimeItemView.swift in Sources */,
 				B3706CAB2B465C0A0057F6BB /* Anime.swift in Sources */,
 				B3633DFB2B4994EC00960DAE /* RankView.swift in Sources */,
+				B3C303722B4F0A9900412053 /* RandomAnimeView.swift in Sources */,
 				B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */,
 				B344CFFF2B4AD86B00246654 /* ColorExtension.swift in Sources */,
 				B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */,
@@ -242,6 +249,7 @@
 				FCDE74F02B4E7E1D004225B6 /* SearchBarView.swift in Sources */,
 				FCDE74EC2B4E75D2004225B6 /* MainView.swift in Sources */,
 				FCDE74EA2B4E7338004225B6 /* AnimeSearchViewModel.swift in Sources */,
+				B3C303702B4F087800412053 /* RandomAnimeViewModel.swift in Sources */,
 				B35638412B46989A00CCC639 /* DateFormatExtension.swift in Sources */,
 				B3706C9F2B464DC80057F6BB /* TopAnimeView.swift in Sources */,
 				B3706C932B4648510057F6BB /* ContentView.swift in Sources */,

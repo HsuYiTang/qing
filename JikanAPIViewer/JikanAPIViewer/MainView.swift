@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject var viewModel = TopAnimeViewModel()
     @StateObject var searchViewModel = AnimeSearchViewModel()
+    @StateObject var randomAnimeViewModel = RandomAnimeViewModel()
     var body: some View {
         TabView {
             TopAnimeView()
@@ -11,7 +12,10 @@ struct MainView: View {
                 .tabItem {
                     Label("排行榜", systemImage: "list.number")
                 }
-
+            RandomAnimeView().environmentObject(randomAnimeViewModel)
+                .tabItem{
+                    Label("好手氣",systemImage:"")
+                }
             AnimeSearchView()
                 .environmentObject(searchViewModel)
                 .tabItem {

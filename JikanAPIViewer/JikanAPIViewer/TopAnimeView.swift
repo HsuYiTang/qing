@@ -8,7 +8,6 @@ struct TopAnimeView: View{
         NavigationView {
             ZStack {
                 AnimeList
-                    
                 ProgressView()
                     .opacity(viewModel.isLoading ? 1.0: 0.0)
             }

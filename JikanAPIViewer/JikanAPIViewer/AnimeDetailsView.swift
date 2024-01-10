@@ -4,9 +4,9 @@ import Marquee
 
 struct AnimeDetailsView: View {
     @State private var showWebView = false
-    let item: Anime
+    let item: Anime?
     var body: some View{
-        let url = URL(string: item.images?["jpg"]?.largeImageURL ?? "")!
+        let url = URL(string: item!.images?["jpg"]?.largeImageURL ?? "")!
         GeometryReader{ geometry in
             ScrollView{
                 VStack{
@@ -20,35 +20,35 @@ struct AnimeDetailsView: View {
                         })}
                     VStack{
                         VStack{
-                            Text("\(item.titleJapanese ?? "")")
+                            Text("\(item!.titleJapanese ?? "")")
                                     .font(.title)
                                     //.fontWeight(.bold)
-                            Text("\(item.titleEnglish ?? "")")
-                            Text("類型:\(item.type ?? "")")
+                            Text("\(item!.titleEnglish ?? "")")
+                            Text("類型:\(item!.type ?? "")")
                         HStack{
                             Text("日期:")
-                            Text(item.type == "Movie" ? "\(item.aired?.from?.dateFormated() ?? "")" : "\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
+                            Text(item!.type == "Movie" ? "\(item!.aired?.from?.dateFormated() ?? "")" : "\(item!.aired?.from?.dateFormated() ?? "") ~ \(item!.aired?.to?.dateFormated() ?? "To be continued")")
                         }.aspectRatio(contentMode: .fit)
                             HStack(alignment: .bottom){
-                                Text("排名:\(Int(item.rank ?? 0))")
-                                    .font(Int(item.rank ?? 0) <= 3 ? .title : .system(.callout))
-                                    .fontWeight(Int(item.rank ?? 0) <= 3 ? .bold : nil)
-                                Text("評分: \((item.score ?? 0.0),specifier: "%.2f")")
+                                Text("排名:\(Int(item!.rank ?? 0))")
+                                    .font(Int(item!.rank ?? 0) <= 3 ? .title : .system(.callout))
+                                    .fontWeight(Int(item!.rank ?? 0) <= 3 ? .bold : nil)
+                                Text("評分: \((item!.score ?? 0.0),specifier: "%.2f")")
                                     .foregroundColor( .red)
                             }
                         }
                     }.frame(maxWidth: .infinity)
                     HStack{
-                        Text("原作: \(item.source ?? "")").padding()
+                        Text("原作: \(item!.source ?? "")").padding()
                     }
-                    Text((item.background != nil) ? "描述:\(item.background!)" : "").padding()
+                    Text((item!.background != nil) ? "描述:\(item!.background!)" : "").padding()
                     Button {
                         showWebView.toggle()
                     } label: {
                         Text("在網頁中查看")
                     }
                     .buttonStyle(ButtonView()).sheet(isPresented: $showWebView) {
-                        if let urlString = item.url, let url = URL(string: urlString) {
+                        if let urlString = item!.url, let url = URL(string: urlString) {
                             SafariView(url: url)
                         }
                     }

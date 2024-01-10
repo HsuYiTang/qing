@@ -9,6 +9,13 @@ struct JikanAPIGetTopAnime: Codable, Equatable {
         lhs.data == rhs.data
     }
 }
+struct JikanAPIGetAnime: Codable, Equatable {
+    let data: Anime?
+    
+    static func == (lhs: JikanAPIGetAnime, rhs: JikanAPIGetAnime) -> Bool {
+        lhs.data == rhs.data
+    }
+}
 
 // MARK: - Manga
 struct Anime: Codable, Identifiable, Equatable {
