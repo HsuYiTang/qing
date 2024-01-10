@@ -20,7 +20,8 @@ struct AnimeSearchView: View {
                 .onAppear() {
                     animeSearchViewModel.initTopAnimeList()
                 }
-        }.navigationViewStyle(StackNavigationViewStyle())
+                .navigationViewStyle(StackNavigationViewStyle())
+        }
     }
     var AnimeList: some View{
         List{

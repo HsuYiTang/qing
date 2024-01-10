@@ -11,7 +11,7 @@ class AnimeSearchViewModel: ObservableObject {
     
     func initTopAnimeList(){
         if animeResult.isEmpty {
-            fetchAnime(name: "Attck")
+            fetchAnime(name: "HUNTER")
         }
     }
     
