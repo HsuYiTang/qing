@@ -28,8 +28,8 @@ struct ContentView: View {
                         print("Click Button")
                         self.isLinkActive = true
                     } label: {
-                        Text("Go")
-                            .font(.title)
+                        Text("前往")
+                            .font(.system(.title,design: .rounded))
                     }.controlSize(.large)
                         .padding()
                         .buttonStyle(ButtonView())
@@ -40,7 +40,6 @@ struct ContentView: View {
                     .font(.footnote)
                     .fontWeight(.light)
             }.frame(maxWidth:.infinity)
-            //.background(Color("ViewPage"))
         }
     }
 }
