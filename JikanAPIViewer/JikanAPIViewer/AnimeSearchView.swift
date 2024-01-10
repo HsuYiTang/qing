@@ -2,11 +2,10 @@ import SwiftUI
 
 struct AnimeSearchView: View {
     @EnvironmentObject private var animeSearchViewModel: AnimeSearchViewModel
-    @State var name: String
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $name)
+                SearchBar()
                 ZStack {
                     AnimeList
                         .navigationBarTitleDisplayMode(.inline)
@@ -34,8 +33,8 @@ struct AnimeSearchView: View {
                     AnimeItemView(item: item)
                 }
             }
-        }.onAppear() {
-            animeSearchViewModel.searchAnime(name: name)
-       }
+        }.onAppear(){
+            animeSearchViewModel.searchAnime(name: animeSearchViewModel.name)
+        }
     }
 }

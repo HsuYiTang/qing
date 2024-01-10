@@ -1,10 +1,4 @@
 //
-//  RankBackgroundViewModel.swift
-//  JikanAPIViewer
-//
-//  Created by 徐翊棠 on 2024/1/6.
-//
-
 import Foundation
 import SwiftUI
 func RankViewBackgroundColor(_ rank: Int) -> LinearGradient {

@@ -1,10 +1,3 @@
-//
-//  JikanAPIService.swift
-//  JikanReader
-//
-//  Created by rensakura on 2022/4/8.
-//
-
 import Foundation
 
 enum JikanAPIServiceError: Error, Equatable {
@@ -46,10 +39,6 @@ struct JikanAPIService: JikanAPIServiceProtocol {
         return URL(string: baseURL + "\(endpoint)?\(param)")
     }
     
-    private func makeSearchURL(param: String) -> URL? {
-        return URL(string: baseURL + "\(param)")
-    }
-    
     private func httpGETRequest<T: Codable>(url: URL, completionHandler: @escaping (Result<T, JikanAPIServiceError>) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -89,9 +78,11 @@ extension JikanAPIService {
     func fetchAnime(name: String, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void) {
         let param  = "\(name)"
         
-        guard makeSearchURL(param: param) != nil else {
+        guard let url = makeURL(endpoint: "/anime", param: param) else {
             completionHandler(.failure(.urlError))
             return
         }
+        
+        httpGETRequest(url: url, completionHandler: completionHandler)
     }
 }

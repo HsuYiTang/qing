@@ -1,10 +1,3 @@
-//
-//  JikanAPIGetTopAnime.swift
-//  JikanReader
-//
-//  Created by rensakura on 2022/4/8.
-//
-
 import Foundation
 
 // MARK: - JikanAPIGetTopAnime

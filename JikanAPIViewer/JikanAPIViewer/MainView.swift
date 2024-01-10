@@ -12,7 +12,7 @@ struct MainView: View {
                     Label("Top Rank", systemImage: "list.number")
                 }
 
-            AnimeSearchView(name: "")
+            AnimeSearchView()
                 .environmentObject(searchViewModel)
                 .tabItem {
                    Label("Search", systemImage: "magnifyingglass")

@@ -1,10 +1,3 @@
-//
-//  DateFormatExtension.swift
-//  JikanReader
-//
-//  Created by rensakura on 2022/4/9.
-//
-
 import Foundation
 
 extension DateFormatter {

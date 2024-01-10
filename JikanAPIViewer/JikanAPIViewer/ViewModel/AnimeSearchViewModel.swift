@@ -3,7 +3,7 @@ import Foundation
 class AnimeSearchViewModel: ObservableObject {
     @Published var animeResult: [Anime] = [Anime]()
     @Published var isLoading = false
-    private var name = ""
+    @Published var name = ""
     private var APIService: JikanAPIServiceProtocol
     init(APIService: JikanAPIServiceProtocol = JikanAPIService()){
         self.APIService = APIService
