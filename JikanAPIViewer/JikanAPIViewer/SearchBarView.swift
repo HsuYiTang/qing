@@ -11,13 +11,8 @@ struct SearchBar: View {
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
-            Button {
-                animeSearchViewModel.searchAnime(name: animeSearchViewModel.name)
-            } label: {
-                Text("Search")
-            }
 
-                /*.overlay(
+                .overlay(
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
@@ -41,17 +36,24 @@ struct SearchBar: View {
                 }
 
             if isEditing {
-                Button(action: {
-                    self.isEditing = false
-                    animeSearchViewModel.name = ""
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                }) {
-                    Text("Cancel")
+                HStack {
+                    Button {
+                        animeSearchViewModel.searchAnime(name: animeSearchViewModel.name)
+                    } label: {
+                        Text("Search")
+                    }
+                    Button(action: {
+                        self.isEditing = false
+                        animeSearchViewModel.name = ""
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }) {
+                        Text("Cancel")
+                    }
+                    .padding(.trailing, 10)
+                    .transition(.move(edge: .trailing))
+                    .animation(.default)
                 }
-                .padding(.trailing, 10)
-                .transition(.move(edge: .trailing))
-                .animation(.default)
-            }*/
+            }
         }
     }
 }
