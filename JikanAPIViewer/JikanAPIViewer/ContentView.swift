@@ -29,7 +29,7 @@ struct ContentView: View {
                         .buttonStyle(ButtonView())
                 }
                 Spacer()
-                Text("the viewer of jikan API")
+                Text("透過Jikan API查看動畫排行榜跟尋找動畫")
                     .foregroundColor(.black)
                     .font(.footnote)
                     .fontWeight(.light)

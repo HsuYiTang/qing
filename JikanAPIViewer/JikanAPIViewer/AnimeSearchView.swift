@@ -7,9 +7,16 @@ struct AnimeSearchView: View {
             VStack {
                 SearchBar().environmentObject(animeSearchViewModel)
                 ZStack {
-                    AnimeList
-                    ProgressView()
-                    .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)}
+                        AnimeList
+                        .opacity(animeSearchViewModel.animeResult.isEmpty ? 0.0: 1.0)
+                        
+                }.background(){
+                    VStack{
+                        ProgressView()
+                            .opacity(animeSearchViewModel.cache != nil && animeSearchViewModel.isLoading ? 1.0: 0.0)
+                        Text((animeSearchViewModel.cache != nil ? animeSearchViewModel.isLoading == false ? "找不到該動畫" : "搜尋中" : "請輸入動畫名稱"))
+                    }
+                }
                 }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("搜尋")
@@ -23,21 +30,20 @@ struct AnimeSearchView: View {
         }
     }
     var AnimeList: some View{
-        List{
-            ForEach(animeSearchViewModel.animeResult,id: \.id){ item in
-                NavigationLink {
-                    if let anime = item{
-                        AnimeDetailsView(item: anime)
+            List{
+                ForEach(animeSearchViewModel.animeResult,id: \.id){ item in
+                    NavigationLink {
+                        if let anime = item{
+                            AnimeDetailsView(item: anime)
+                        }
+                    } label: {
+                        AnimeItemView(item: item)
                     }
-                } label: {
-                    AnimeItemView(item: item)
                 }
-            }
-        }.onAppear(){
-            if (animeSearchViewModel.cache == nil) {
-                animeSearchViewModel.searchAnime(name: "")
-            }
-            //animeSearchViewModel.searchAnime(name: animeSearchViewModel.cache != nil ? animeSearchViewModel.cache! : "")
+            }.onAppear(){
+                if (animeSearchViewModel.cache == nil) {
+                    animeSearchViewModel.searchAnime(name: "")
+                }
         }
     }
 }
