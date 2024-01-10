@@ -12,9 +12,11 @@ struct TopAnimeView: View{
     @EnvironmentObject private var viewModel: TopAnimeViewModel
     @EnvironmentObject private var animeSearchViewModel: AnimeSearchViewModel
     var body: some View{
-        NavigationView {
+        //NavigationView {
             ZStack {
                 AnimeList
+                ProgressView()
+                    .opacity(viewModel.isLoading ? 1.0: 0.0)
             }.navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("首頁")
                 .refreshable {
@@ -23,9 +25,9 @@ struct TopAnimeView: View{
                 .onAppear() {
                     viewModel.initTopAnimeList()
                 }
-            ProgressView()
-                .opacity(viewModel.isLoading ? 1.0: 0.0)
-        }.navigationViewStyle(StackNavigationViewStyle())
+                .navigationViewStyle(StackNavigationViewStyle())
+            
+        //}
     }
     var AnimeList: some View{
         List{
