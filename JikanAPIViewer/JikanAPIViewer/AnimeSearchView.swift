@@ -9,12 +9,16 @@ struct AnimeSearchView: View {
                 SearchBar(text: $name)
                 ZStack {
                     AnimeList
+                    ProgressView()
+                    .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)}
                 }
-                ProgressView()
-                .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)}.navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("搜尋")
                 .refreshable {
                         animeSearchViewModel.refreshCurrentList()
+                }
+                .onAppear() {
+                    animeSearchViewModel.initTopAnimeList()
                 }
         }.navigationViewStyle(StackNavigationViewStyle())
     }

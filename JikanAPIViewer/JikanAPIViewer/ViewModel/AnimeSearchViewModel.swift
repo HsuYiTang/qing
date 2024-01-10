@@ -8,11 +8,13 @@ class AnimeSearchViewModel: ObservableObject {
     init(APIService: JikanAPIServiceProtocol = JikanAPIService()){
         self.APIService = APIService
     }
-//    func initAnimeList(){
-//        if animeResult.isEmpty {
-//            fetchAnime(name: "")
-//        }
-//    }
+    
+    func initTopAnimeList(){
+        if animeResult.isEmpty {
+            fetchAnime(name: "Attck")
+        }
+    }
+    
     private func fetchAnime(name: String) {
         isLoading = true
 
