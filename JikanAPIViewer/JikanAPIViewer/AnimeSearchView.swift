@@ -34,7 +34,10 @@ struct AnimeSearchView: View {
                 }
             }
         }.onAppear(){
-            animeSearchViewModel.searchAnime(name: animeSearchViewModel.cache != nil ? animeSearchViewModel.cache! : "")
+            if (animeSearchViewModel.cache == nil) {
+                animeSearchViewModel.searchAnime(name: "")
+            }
+            //animeSearchViewModel.searchAnime(name: animeSearchViewModel.cache != nil ? animeSearchViewModel.cache! : "")
         }
     }
 }

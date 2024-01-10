@@ -15,7 +15,7 @@ struct AnimeItemView: View{
                 AsyncImage(url: url,content:{ image in
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(/*maxWidth: 80, */minHeight: 80, maxHeight: 100)
+                        .frame(maxWidth: 80, maxHeight: 100)
                 },placeholder: {
                     ProgressView()
                         .aspectRatio(contentMode: .fit)
@@ -24,7 +24,7 @@ struct AnimeItemView: View{
                 VStack(alignment: .leading) {
                     Marquee {
                         Text("\(item.titleJapanese ?? "")")
-                            .font(.system(size: 14,weight: .heavy))
+                            .font(.system(size: 16,weight: .heavy))
                     }
                     .marqueeWhenNotFit(true)
                         .marqueeDuration(5)
