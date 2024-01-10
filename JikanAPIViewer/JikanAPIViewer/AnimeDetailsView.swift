@@ -70,8 +70,6 @@ struct AnimeDetailsView: View {
         didSet{
             if oldValue < 1.0 {
                 steadyStateScale = 1.0
-            }else if oldValue > 2.5{
-                steadyStateScale = 2.5
             }
         }
     }
@@ -80,8 +78,6 @@ struct AnimeDetailsView: View {
     private var zoomScale: CGFloat {
         if steadyStateScale * gestureScale <= 1.0{
             return 1.0
-        }else if steadyStateScale * gestureScale >= 2.5{
-            return 2.5
         }
         else{
             return steadyStateScale * gestureScale
