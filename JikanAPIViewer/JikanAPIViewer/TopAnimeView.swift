@@ -10,19 +10,22 @@ import SwiftUI
 
 struct TopAnimeView: View{
     @EnvironmentObject private var viewModel: TopAnimeViewModel
+    @EnvironmentObject private var animeSearchViewModel: AnimeSearchViewModel
     var body: some View{
-        ZStack {
-            AnimeList
-        }.navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("首頁")
-            .refreshable {
-                viewModel.refreshCurrentList()
-            }
-            .onAppear() {
-                viewModel.initTopAnimeList()
-            }
-        ProgressView()
-            .opacity(viewModel.isLoading ? 1.0: 0.0)
+        NavigationView {
+            ZStack {
+                AnimeList
+            }.navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("首頁")
+                .refreshable {
+                    viewModel.refreshCurrentList()
+                }
+                .onAppear() {
+                    viewModel.initTopAnimeList()
+                }
+            ProgressView()
+                .opacity(viewModel.isLoading ? 1.0: 0.0)
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     var AnimeList: some View{
         List{

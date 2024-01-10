@@ -19,12 +19,11 @@ struct ContentView: View {
                     .fontWeight(.heavy)
                     .font(.system(size: 75))
                 Text("Viewer")
-                    //.font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(Color(hex: 0xA69A25))
                     .font(.system(size: 75))
                 Spacer()
-                NavigationLink(destination: TopAnimeView().environmentObject(viewModel), isActive: $isLinkActive) {
+                NavigationLink(destination: MainView().environmentObject(viewModel), isActive: $isLinkActive) {
                     Button {
                         print("Click Button")
                         self.isLinkActive = true

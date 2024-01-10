@@ -31,6 +31,7 @@ enum JikanAPIServiceError: Error, Equatable {
 
 protocol JikanAPIServiceProtocol {
     func fetchTopAnime(page: Int, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void)
+    func fetchAnime(name: String, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void)
 }
 
 struct JikanAPIService: JikanAPIServiceProtocol {
@@ -80,5 +81,13 @@ extension JikanAPIService {
         }
         
         httpGETRequest(url: url, completionHandler: completionHandler)
+    }
+    func fetchAnime(name: String, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void) {
+        let param  = "\(name)"
+        
+        guard makeURL(endpoint: "", param: param) != nil else {
+            completionHandler(.failure(.urlError))
+            return
+        }
     }
 }
