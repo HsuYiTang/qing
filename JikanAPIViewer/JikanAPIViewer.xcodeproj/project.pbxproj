@@ -23,6 +23,7 @@
 		B3706CAB2B465C0A0057F6BB /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706CA62B465C0A0057F6BB /* Anime.swift */; };
 		B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706CAE2B4660E00057F6BB /* TopAnimeViewModel.swift */; };
 		B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380670D2B4841870088B662 /* AnimeDetailsView.swift */; };
+		FC66FBD92B4E6D0D0003229C /* Marquee in Frameworks */ = {isa = PBXBuildFile; productRef = FC66FBD82B4E6D0D0003229C /* Marquee */; };
 		FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB1592B498150007472C6 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC66FBD92B4E6D0D0003229C /* Marquee in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +156,9 @@
 			dependencies = (
 			);
 			name = JikanAPIViewer;
+			packageProductDependencies = (
+				FC66FBD82B4E6D0D0003229C /* Marquee */,
+			);
 			productName = JikanAPIViewer;
 			productReference = B3706C8D2B4648510057F6BB /* JikanAPIViewer.app */;
 			productType = "com.apple.product-type.application";
@@ -182,6 +187,9 @@
 				Base,
 			);
 			mainGroup = B3706C842B4648510057F6BB;
+			packageReferences = (
+				FC66FBD72B4E6D0D0003229C /* XCRemoteSwiftPackageReference "Marquee" */,
+			);
 			productRefGroup = B3706C8E2B4648510057F6BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -425,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC66FBD72B4E6D0D0003229C /* XCRemoteSwiftPackageReference "Marquee" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIKit/Marquee.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC66FBD82B4E6D0D0003229C /* Marquee */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC66FBD72B4E6D0D0003229C /* XCRemoteSwiftPackageReference "Marquee" */;
+			productName = Marquee;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3706C852B4648510057F6BB /* Project object */;
 }

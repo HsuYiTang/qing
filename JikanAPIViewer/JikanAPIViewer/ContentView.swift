@@ -13,6 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
+                Spacer()
                 Text("JikanAPI")
                     .foregroundColor(Color(hex: 0xA69A25))
                     .fontWeight(.heavy)

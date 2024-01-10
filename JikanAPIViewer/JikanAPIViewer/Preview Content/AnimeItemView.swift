@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Marquee
 
 struct AnimeItemView: View{
     let animatioEffect = Animation.linear(duration: 3)
@@ -26,16 +27,20 @@ struct AnimeItemView: View{
                     ProgressView()
                 })
                 VStack(alignment: .leading) {
-                    Text("\(item.titleJapanese ?? "")")
-                        .offset(x: 位移, y: 0)
-                        .onAppear {
-                            withAnimation(animatioEffect.repeatForever(autoreverses: false)){
-                                位移 = 0.0
-                            }
-                        }
+                    Marquee {
+                        Text("\(item.titleJapanese ?? "")")
+                            .font(.system(size: 18,weight: .heavy))
+                    }.marqueeWhenNotFit(true)
+                        .marqueeDuration(5)
+                        //.offset(x: 位移, y: 0)
+//                        .onAppear {
+//                            withAnimation(animatioEffect.repeatForever(autoreverses: false)){
+//                                位移 = 0.0
+//                            }
+//                        }
                         //.clipped()
                         //.lineLimit(1)
-                        .font(.system(size: 18,weight: .heavy))
+                        
                     Text("類型：\(item.type ?? "")")
                         .offset(x: 0.0)
                         .font(.system(size: 14))
