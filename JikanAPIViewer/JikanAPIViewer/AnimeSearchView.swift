@@ -9,18 +9,18 @@ struct AnimeSearchView: View {
                 SearchBar(text: $name)
                 ZStack {
                     AnimeList
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationTitle("搜尋")
+                        .refreshable {
+                                animeSearchViewModel.refreshCurrentList()
+                        }
+                        .onAppear() {
+                            animeSearchViewModel.initTopAnimeList()
+                        }
+                        .navigationViewStyle(StackNavigationViewStyle())
                     ProgressView()
                     .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)}
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("搜尋")
-                .refreshable {
-                        animeSearchViewModel.refreshCurrentList()
-                }
-                .onAppear() {
-                    animeSearchViewModel.initTopAnimeList()
-                }
-                .navigationViewStyle(StackNavigationViewStyle())
         }
     }
     var AnimeList: some View{

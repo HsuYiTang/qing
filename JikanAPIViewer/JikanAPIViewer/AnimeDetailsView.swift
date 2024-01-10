@@ -46,11 +46,11 @@ struct AnimeDetailsView: View {
                     HStack{
                         Text("Source: \(item.source ?? "")").padding()
                     }
-                    Text("\(item.background ?? "")").padding()
+                    //Text("\(item.background ?? "")").padding()
                     Button {
                         showWebView.toggle()
                     } label: {
-                        Text("View on Web")
+                        Text("在網頁中查看")
                     }
                     .buttonStyle(ButtonView()).sheet(isPresented: $showWebView) {
                         if let urlString = item.url, let url = URL(string: urlString) {
