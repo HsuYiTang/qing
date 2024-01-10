@@ -6,7 +6,6 @@ struct AnimeSearchView: View {
         NavigationView {
             VStack {
                 SearchBar().environmentObject(animeSearchViewModel)
-                Text(animeSearchViewModel.name)
                 ZStack {
                     AnimeList
                         .navigationBarTitleDisplayMode(.inline)

@@ -30,8 +30,6 @@ struct AnimeDetailsView: View {
                                 .font(.title)
                                 .fontWeight(.bold)
                             Text("\(item.titleEnglish ?? "")")
-                        }
-                        VStack(alignment: .leading){
                             HStack{
                                 Text("Streaming platform:")
                                 Text("\(item.type ?? "")")
@@ -39,6 +37,10 @@ struct AnimeDetailsView: View {
                             Text("\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
                                 .font(.system(size: 14))
                             HStack(alignment: .bottom){
+                                Text("RANK:")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                rankView(rank: Int(item.rank ?? 0))
                                 Text("score: ")
                                 Text("\((item.score ?? 5.0),specifier: "%.2f")")
                                     .foregroundColor( .red)
