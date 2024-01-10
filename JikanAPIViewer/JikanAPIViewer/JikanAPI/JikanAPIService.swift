@@ -78,7 +78,7 @@ extension JikanAPIService {
     func fetchAnime(name: String, completionHandler: @escaping (Result<JikanAPIGetTopAnime, JikanAPIServiceError>) -> Void) {
         let param  = "\(name)"
         
-        guard let url = makeURL(endpoint: "/anime", param: param) else {
+        guard let url = makeURL(endpoint: "/anime?q=\(name)", param: param) else {
             completionHandler(.failure(.urlError))
             return
         }

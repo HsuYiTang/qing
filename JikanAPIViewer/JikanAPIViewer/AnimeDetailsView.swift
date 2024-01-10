@@ -24,12 +24,14 @@ struct AnimeDetailsView: View {
                         },placeholder: {
                             ProgressView()
                         })}
-                    HStack{
-                        VStack(alignment: .leading){
+                    VStack{
+                        VStack{
                             Text("\(item.titleJapanese ?? "")")
                                 .font(.title)
                                 .fontWeight(.bold)
                             Text("\(item.titleEnglish ?? "")")
+                        }
+                        VStack(alignment: .leading){
                             HStack{
                                 Text("Streaming platform:")
                                 Text("\(item.type ?? "")")

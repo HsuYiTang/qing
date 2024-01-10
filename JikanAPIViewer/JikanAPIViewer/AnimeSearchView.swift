@@ -6,19 +6,20 @@ struct AnimeSearchView: View {
         NavigationView {
             VStack {
                 SearchBar()
-                ZStack {
-                    AnimeList
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationTitle("搜尋")
-                        .refreshable {
-                                animeSearchViewModel.refreshCurrentList()
-                        }
-                        .onAppear() {
-                            animeSearchViewModel.initTopAnimeList()
-                        }
-                        .navigationViewStyle(StackNavigationViewStyle())
-                    ProgressView()
-                    .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)}
+                    ZStack {
+                        AnimeList
+                            .navigationBarTitleDisplayMode(.inline)
+                            .navigationTitle("搜尋")
+                            .refreshable {
+                                    animeSearchViewModel.refreshCurrentList()
+                            }
+                            .onAppear() {
+                                animeSearchViewModel.initTopAnimeList()
+                            }
+                            .navigationViewStyle(StackNavigationViewStyle())
+                        ProgressView()
+                            .opacity(animeSearchViewModel.isLoading ? 1.0: 0.0)
+                    }
                 }
         }
     }
