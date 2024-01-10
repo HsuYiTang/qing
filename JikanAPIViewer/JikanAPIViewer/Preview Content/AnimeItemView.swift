@@ -43,7 +43,7 @@ struct AnimeItemView: View{
                         .marqueeDuration(5)
                     }
                 }
-            }
+            }.frame(minHeight: 100)
     }
 }
 struct AnimeItemView_Previews: PreviewProvider {
