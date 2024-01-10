@@ -30,17 +30,9 @@ struct AnimeItemView: View{
                     Marquee {
                         Text("\(item.titleJapanese ?? "")")
                             .font(.system(size: 18,weight: .heavy))
-                    }.marqueeWhenNotFit(true)
+                    }.clipped()
+                    .marqueeWhenNotFit(true)
                         .marqueeDuration(5)
-                        //.offset(x: 位移, y: 0)
-//                        .onAppear {
-//                            withAnimation(animatioEffect.repeatForever(autoreverses: false)){
-//                                位移 = 0.0
-//                            }
-//                        }
-                        //.clipped()
-                        //.lineLimit(1)
-                        
                     Text("類型：\(item.type ?? "")")
                         .offset(x: 0.0)
                         .font(.system(size: 14))
