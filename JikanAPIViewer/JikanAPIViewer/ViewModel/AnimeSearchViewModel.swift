@@ -11,7 +11,7 @@ class AnimeSearchViewModel: ObservableObject {
     
     func initTopAnimeList(){
         if animeResult.isEmpty {
-            fetchAnime(name: "HUNTER")
+            fetchAnime(name: "")
         }
     }
     
@@ -48,6 +48,7 @@ class AnimeSearchViewModel: ObservableObject {
     }
     
     func searchAnime(name: String) {
+        self.name = name
         fetchAnime(name: name)
     }
     

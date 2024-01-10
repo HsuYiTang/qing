@@ -11,7 +11,13 @@ struct SearchBar: View {
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
-                .overlay(
+            Button {
+                animeSearchViewModel.searchAnime(name: animeSearchViewModel.name)
+            } label: {
+                Text("Search")
+            }
+
+                /*.overlay(
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
@@ -45,7 +51,7 @@ struct SearchBar: View {
                 .padding(.trailing, 10)
                 .transition(.move(edge: .trailing))
                 .animation(.default)
-            }
+            }*/
         }
     }
 }

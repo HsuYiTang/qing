@@ -30,17 +30,23 @@ struct AnimeItemView: View{
                     Marquee {
                         Text("\(item.titleJapanese ?? "")")
                             .font(.system(size: 18,weight: .heavy))
-                    }.clipped()
+                    }
                     .marqueeWhenNotFit(true)
                         .marqueeDuration(5)
                     Text("類型：\(item.type ?? "")")
-                        .offset(x: 0.0)
                         .font(.system(size: 14))
-                    Text(item.type == "Movie" ? "上映日期：\(item.aired?.from?.dateFormated() ?? "")" : "播放日期：\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
-                        .font(.system(size: 14))
-                        .lineLimit(3)
                     Text("評分：\(item.score ?? 0.0, specifier: "%.2f")")
                         .font(.system(size: 14))
+                    HStack {
+                        Text(item.type == "Movie" ? "日期：" : "日期：")
+                            .font(.system(size: 14))
+                        Marquee {
+                            Text(item.type == "Movie" ? "\(item.aired?.from?.dateFormated() ?? "")" : "\(item.aired?.from?.dateFormated() ?? "") ~ \(item.aired?.to?.dateFormated() ?? "To be continued")")
+                                .font(.system(size: 14))
+                        }
+                        .marqueeWhenNotFit(true)
+                        .marqueeDuration(5)
+                    }
                 }
             }
     }
