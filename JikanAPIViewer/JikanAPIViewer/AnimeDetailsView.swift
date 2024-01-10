@@ -50,7 +50,7 @@ struct AnimeDetailsView: View {
                     HStack{
                         Text("Source: \(item.source ?? "")").padding()
                     }
-                    //Text("\(item.background ?? "")").padding()
+                    Text("\(item.background ?? "")").padding()
                     Button {
                         showWebView.toggle()
                     } label: {
