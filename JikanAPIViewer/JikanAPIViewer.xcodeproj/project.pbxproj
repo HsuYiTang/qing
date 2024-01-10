@@ -23,7 +23,7 @@
 		B3706CAB2B465C0A0057F6BB /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706CA62B465C0A0057F6BB /* Anime.swift */; };
 		B3706CAF2B4660E00057F6BB /* TopAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3706CAE2B4660E00057F6BB /* TopAnimeViewModel.swift */; };
 		B380670E2B4841870088B662 /* AnimeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380670D2B4841870088B662 /* AnimeDetailsView.swift */; };
-		FC66FBD92B4E6D0D0003229C /* Marquee in Frameworks */ = {isa = PBXBuildFile; productRef = FC66FBD82B4E6D0D0003229C /* Marquee */; };
+		B3C3036E2B4EAA1B00412053 /* Marquee in Frameworks */ = {isa = PBXBuildFile; productRef = B3C3036D2B4EAA1B00412053 /* Marquee */; };
 		FCCCB15A2B498150007472C6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB1592B498150007472C6 /* ButtonView.swift */; };
 		FCDE74EA2B4E7338004225B6 /* AnimeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74E92B4E7338004225B6 /* AnimeSearchViewModel.swift */; };
 		FCDE74EC2B4E75D2004225B6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE74EB2B4E75D2004225B6 /* MainView.swift */; };
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC66FBD92B4E6D0D0003229C /* Marquee in Frameworks */,
+				B3C3036E2B4EAA1B00412053 /* Marquee in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +169,7 @@
 			);
 			name = JikanAPIViewer;
 			packageProductDependencies = (
-				FC66FBD82B4E6D0D0003229C /* Marquee */,
+				B3C3036D2B4EAA1B00412053 /* Marquee */,
 			);
 			productName = JikanAPIViewer;
 			productReference = B3706C8D2B4648510057F6BB /* JikanAPIViewer.app */;
@@ -200,7 +200,7 @@
 			);
 			mainGroup = B3706C842B4648510057F6BB;
 			packageReferences = (
-				FC66FBD72B4E6D0D0003229C /* XCRemoteSwiftPackageReference "Marquee" */,
+				B3C3036C2B4EAA1B00412053 /* XCRemoteSwiftPackageReference "Marquee" */,
 			);
 			productRefGroup = B3706C8E2B4648510057F6BB /* Products */;
 			projectDirPath = "";
@@ -377,7 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JikanAPIViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = HY8925K37K;
+				DEVELOPMENT_TEAM = 6KA93FQUQH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -390,7 +390,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = C110110101;
+				PRODUCT_BUNDLE_IDENTIFIER = C110110122;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -419,7 +419,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = C110110101;
+				PRODUCT_BUNDLE_IDENTIFIER = C110110122;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,20 +451,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC66FBD72B4E6D0D0003229C /* XCRemoteSwiftPackageReference "Marquee" */ = {
+		B3C3036C2B4EAA1B00412053 /* XCRemoteSwiftPackageReference "Marquee" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftUIKit/Marquee.git";
+			repositoryURL = "https://github.com/SwiftUIKit/Marquee";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.3.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC66FBD82B4E6D0D0003229C /* Marquee */ = {
+		B3C3036D2B4EAA1B00412053 /* Marquee */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC66FBD72B4E6D0D0003229C /* XCRemoteSwiftPackageReference "Marquee" */;
+			package = B3C3036C2B4EAA1B00412053 /* XCRemoteSwiftPackageReference "Marquee" */;
 			productName = Marquee;
 		};
 /* End XCSwiftPackageProductDependency section */

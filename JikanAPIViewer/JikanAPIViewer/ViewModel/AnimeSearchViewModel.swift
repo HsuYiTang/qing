@@ -48,6 +48,7 @@ class AnimeSearchViewModel: ObservableObject {
     }
     
     func searchAnime(name: String) {
+        animeResult = []
         self.name = name
         fetchAnime(name: name)
     }
